@@ -10,12 +10,10 @@ import java.util.ListIterator;
 
 public class ClientTransformer extends AbstractTransformer {
 
-    private int index = -1, xp = -1, level = -1;
-
     // Skill Listener Data
     private final String xpOwner = "client", xpName = "kx";
     private final String levelOwner = "client", levelName = "kd";
-
+    private int index = -1, xp = -1, level = -1;
     private boolean notifiedSkill = false, notifiedInventory = false;
 
     @Override

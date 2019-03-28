@@ -29,8 +29,9 @@ public abstract class AbstractTransformer {
 
     /**
      * Sends the ClassNode to DynaNode over the bridge
+     *
      * @param classNode the ClassNode to send
-     * @param name the name of the ClassNode
+     * @param name      the name of the ClassNode
      * @return true if no exceptions thrown
      */
     protected boolean writeToBridge(final ClassNode classNode, final String name) {
@@ -49,6 +50,7 @@ public abstract class AbstractTransformer {
 
     /**
      * Fetches a from the CDN and writes it into ClassNode
+     *
      * @param name name of class to fetch
      * @return
      */
@@ -62,6 +64,7 @@ public abstract class AbstractTransformer {
 
     /**
      * Pulls the raw class from my server
+     *
      * @param name the class name from current revision to pull
      * @return the input stream for the class file
      * @throws IOException
@@ -72,6 +75,7 @@ public abstract class AbstractTransformer {
 
     /**
      * Sets the bridge, not in constructor so we can encapsulate this
+     *
      * @param bridge
      */
     public void setBridge(final DynaBridge bridge) {

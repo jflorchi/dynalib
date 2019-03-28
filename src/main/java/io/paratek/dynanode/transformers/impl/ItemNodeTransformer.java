@@ -2,12 +2,9 @@ package io.paratek.dynanode.transformers.impl;
 
 import com.runemate.game.api.hybrid.Environment;
 import io.paratek.dynanode.transformers.AbstractTransformer;
-import jdk.internal.org.objectweb.asm.ClassWriter;
 import jdk.internal.org.objectweb.asm.Opcodes;
 import jdk.internal.org.objectweb.asm.tree.*;
 
-import java.io.File;
-import java.io.FileOutputStream;
 import java.io.IOException;
 
 public class ItemNodeTransformer extends AbstractTransformer {

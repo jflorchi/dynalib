@@ -15,6 +15,7 @@ public interface DynaBridge extends Remote {
 
     /**
      * Passes a reference to our client side callback to the RMI server
+     *
      * @param callback
      * @throws RemoteException
      */
@@ -23,6 +24,7 @@ public interface DynaBridge extends Remote {
 
     /**
      * Every time the game is clicked, an action is created and stored for this use
+     *
      * @return the action we stored
      * @throws RemoteException
      */
@@ -31,6 +33,7 @@ public interface DynaBridge extends Remote {
 
     /**
      * Sets the Action that will override the next action that will be sent upon a mouse click
+     *
      * @param action action to execute
      * @throws RemoteException
      */
@@ -39,6 +42,7 @@ public interface DynaBridge extends Remote {
 
     /**
      * Retrieves a loaded class in the remote JVM
+     *
      * @param name the name of the desired class
      * @return the byte[] representation of the class
      * @throws RemoteException
@@ -48,7 +52,8 @@ public interface DynaBridge extends Remote {
 
     /**
      * Redefines a class in the remote JVM
-     * @param name the name of the class to redefine
+     *
+     * @param name  the name of the class to redefine
      * @param bytes the bytes of the new class
      * @return if redefinition was successful
      * @throws RemoteException

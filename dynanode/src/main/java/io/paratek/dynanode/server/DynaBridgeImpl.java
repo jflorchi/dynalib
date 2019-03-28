@@ -4,7 +4,9 @@ import io.paratek.dynanode.DynaAction;
 import io.paratek.dynanode.DynaBridge;
 import io.paratek.dynanode.client.DynaClientCallback;
 
-import java.io.*;
+import java.io.ByteArrayOutputStream;
+import java.io.IOException;
+import java.io.InputStream;
 import java.lang.instrument.ClassDefinition;
 import java.lang.instrument.Instrumentation;
 import java.lang.instrument.UnmodifiableClassException;
@@ -12,7 +14,6 @@ import java.rmi.RemoteException;
 import java.rmi.server.UnicastRemoteObject;
 
 /**
- *
  * @author Parametric
  */
 public class DynaBridgeImpl extends UnicastRemoteObject implements DynaBridge {
@@ -25,7 +26,6 @@ public class DynaBridgeImpl extends UnicastRemoteObject implements DynaBridge {
     }
 
     /**
-     *
      * @param callback
      * @throws RemoteException
      */

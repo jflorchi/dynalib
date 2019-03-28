@@ -12,17 +12,12 @@ import java.util.HashMap;
  */
 public class DynaActionSupplier {
 
-    public static HashMap<String, byte[]> classData = new HashMap<>();
     private static final DynaActionSupplier mediator = new DynaActionSupplier();
+    public static HashMap<String, byte[]> classData = new HashMap<>();
+    private volatile DynaAction action = null, lastAction;
 
     public static DynaActionSupplier getSupplier() {
         return mediator;
-    }
-
-    private volatile DynaAction action = null, lastAction;
-
-    public void setAction(DynaAction action) {
-        this.action = action;
     }
 
     public void setLastAction(int i, int i2, int i3, int i4, String s1, String s2) {
@@ -31,6 +26,10 @@ public class DynaActionSupplier {
 
     public DynaAction getAction() {
         return action;
+    }
+
+    public void setAction(DynaAction action) {
+        this.action = action;
     }
 
     public DynaAction getLastAction() {

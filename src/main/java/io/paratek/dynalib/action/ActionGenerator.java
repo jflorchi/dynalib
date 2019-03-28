@@ -14,17 +14,17 @@ import java.util.List;
 /**
  * Create Actions for execution in game, added as needed.
  * To check action ops do something in game and print out lastAction from DynaNode
- * @see DynaActionSupplier#getLastAction()
- *
- * @ Cloud pls don't add this and let me use it my own bots kthx.
- * You can use it too but don't let prime have it, fuck'm
  *
  * @author Parametric
+ * @ Cloud pls don't add this and let me use it my own bots kthx.
+ * You can use it too but don't let prime have it, fuck'm
+ * @see DynaActionSupplier#getLastAction()
  */
 public class ActionGenerator {
 
     /**
      * Creates a DynaAction with the given parameters
+     *
      * @param i1
      * @param i2
      * @param i3
@@ -38,6 +38,7 @@ public class ActionGenerator {
 
     /**
      * Creates an action for an InterfaceComponent
+     *
      * @param component
      * @param action
      * @return
@@ -69,6 +70,7 @@ public class ActionGenerator {
 
     /**
      * Creates an action for a GameObject
+     *
      * @param object
      * @param action
      * @return
@@ -110,7 +112,7 @@ public class ActionGenerator {
         int regionY = c.getY() - region.getY();
         int type = gameObject.getType().ordinal();
         int id = gameObject.getId();
-        return (regionX & 0x7F) | (regionY & 0x7F) << 7 | (type & 0x3) << 14 | (id  & 0xFFFFFFFFL) << 17;
+        return (regionX & 0x7F) | (regionY & 0x7F) << 7 | (type & 0x3) << 14 | (id & 0xFFFFFFFFL) << 17;
     }
 
 }

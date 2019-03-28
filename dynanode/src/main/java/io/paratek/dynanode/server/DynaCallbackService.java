@@ -2,7 +2,6 @@ package io.paratek.dynanode.server;
 
 import io.paratek.dynanode.client.DynaClientCallback;
 
-import java.awt.*;
 import java.rmi.RemoteException;
 
 /**
@@ -12,10 +11,20 @@ import java.rmi.RemoteException;
  */
 public class DynaCallbackService {
 
+    private static DynaCallbackService service = new DynaCallbackService();
     private DynaClientCallback callback;
+
+    public static DynaCallbackService getService() {
+        return service;
+    }
+
+    /*
+    Singleton
+     */
 
     /**
      * Registers a Callback interface with the Service
+     *
      * @param callback
      */
     public void registerCallback(final DynaClientCallback callback) {
@@ -29,16 +38,6 @@ public class DynaCallbackService {
 
     public DynaClientCallback getCallback() {
         return callback;
-    }
-
-    /*
-    Singleton
-     */
-
-    private static DynaCallbackService service = new DynaCallbackService();
-
-    public static DynaCallbackService getService() {
-        return service;
     }
 
 }

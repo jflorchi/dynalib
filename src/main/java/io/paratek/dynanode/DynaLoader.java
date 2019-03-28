@@ -18,9 +18,8 @@ import java.util.List;
 public class DynaLoader {
 
     private final List<AbstractTransformer> transformers = new ArrayList<>();
-
-    private DynaBridge bridge = null;
     private final String vid;
+    private DynaBridge bridge = null;
 
     public DynaLoader(String vid) {
         this.vid = vid;
@@ -28,6 +27,7 @@ public class DynaLoader {
 
     /**
      * Registers a Callback with the Callback Service
+     *
      * @param callback
      */
     public void registerCallback(final DynaClientCallback callback) {
@@ -40,6 +40,7 @@ public class DynaLoader {
 
     /**
      * Adds a Transformer to be called in DynaLoader#init
+     *
      * @param transformer the transformer to add
      */
     public void submitTransformer(final AbstractTransformer transformer) {
@@ -48,6 +49,7 @@ public class DynaLoader {
 
     /**
      * Get Access to the Bridge
+     *
      * @return
      */
     public DynaBridge getBridge() {
@@ -56,6 +58,7 @@ public class DynaLoader {
 
     /**
      * Creates the tmp agent, attaches it to the jvm, and stores a reference to the bridge
+     *
      * @return
      */
     public boolean init() {
@@ -89,6 +92,7 @@ public class DynaLoader {
 
     /**
      * Clones the agent jar so it can be loaded from classpath
+     *
      * @return the cloned jar
      * @throws IOException
      */
@@ -107,6 +111,7 @@ public class DynaLoader {
 
     /**
      * Starts the RMI Registry, if it's already running it returns false
+     *
      * @return false if already running, true if started on call
      */
     private boolean initRegistry(int port) {
