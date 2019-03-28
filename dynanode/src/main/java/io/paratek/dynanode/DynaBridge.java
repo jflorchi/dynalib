@@ -34,31 +34,7 @@ public interface DynaBridge extends Remote {
      * @param action action to execute
      * @throws RemoteException
      */
-    void setAction(final DynaAction action) throws RemoteException;
-
-
-    /**
-     * Tells the game whether or not to Render Models
-     * @param val if true the game will render models, if false it wont
-     * @throws RemoteException
-     */
-    void setRenderingModels(final boolean val) throws RemoteException;
-
-
-    /**
-     * Tells the game whether or not to Render the Scene
-     * @param val if true the game will render scene, if false it wont
-     * @throws RemoteException
-     */
-    void setRenderingScene(final boolean val) throws RemoteException;
-
-
-    /**
-     * Sets the tick delay, every tick the thread is slept for n ms
-     * @param ms the ms to sleep after each tick
-     * @throws RemoteException
-     */
-    void setTickDelay(final int ms) throws RemoteException;
+    void setLastAction(final DynaAction action) throws RemoteException;
 
 
     /**

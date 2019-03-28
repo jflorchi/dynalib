@@ -2,6 +2,7 @@ package io.paratek.dynanode.server;
 
 import io.paratek.dynanode.client.DynaClientCallback;
 
+import java.awt.*;
 import java.rmi.RemoteException;
 
 /**
@@ -12,66 +13,6 @@ import java.rmi.RemoteException;
 public class DynaCallbackService {
 
     private DynaClientCallback callback;
-
-    private DynaCallbackService() {
-
-    }
-
-    /**
-     *
-     * {@inheritDoc}
-     */
-    public void onSkillUpdate(int skillIndex, int xp, int level) {
-        if (this.callback != null) {
-            try {
-                callback.onSkillUpdate(skillIndex, xp, level);
-            } catch (RemoteException e) {
-                e.printStackTrace();
-            }
-        }
-    }
-
-    /**
-     *
-     * {@inheritDoc}
-     */
-    public void onChatBoxUpdate(int type, String sender, String clan, String message) {
-        if (this.callback != null) {
-            try {
-                callback.onChatBoxUpdate(type, sender, clan, message);
-            } catch (RemoteException e) {
-                e.printStackTrace();
-            }
-        }
-    }
-
-    /**
-     *
-     * {@inheritDoc}
-     */
-    public void onInventoryUpdate(int type, int index, int id, int stack) {
-        if (this.callback != null) {
-            try {
-                callback.onInventoryUpdate(type, index, id, stack);
-            } catch (RemoteException e) {
-                e.printStackTrace();
-            }
-        }
-    }
-
-    /**
-     *
-     * {@inheritDoc}
-     */
-    public void onTick() {
-        if (this.callback != null) {
-            try {
-                callback.onTick();
-            } catch (RemoteException e) {
-                e.printStackTrace();
-            }
-        }
-    }
 
     /**
      * Registers a Callback interface with the Service
@@ -84,6 +25,10 @@ public class DynaCallbackService {
         } catch (RemoteException e) {
             e.printStackTrace();
         }
+    }
+
+    public DynaClientCallback getCallback() {
+        return callback;
     }
 
     /*

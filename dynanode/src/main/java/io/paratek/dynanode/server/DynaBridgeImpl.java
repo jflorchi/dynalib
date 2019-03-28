@@ -47,32 +47,8 @@ public class DynaBridgeImpl extends UnicastRemoteObject implements DynaBridge {
      * {@inheritDoc}
      */
     @Override
-    public void setAction(DynaAction action) throws RemoteException {
+    public void setLastAction(DynaAction action) throws RemoteException {
         DynaActionSupplier.getSupplier().setAction(action);
-    }
-
-    /**
-     * {@inheritDoc}
-     */
-    @Override
-    public void setRenderingModels(boolean val) throws RemoteException {
-        DynaActionSupplier.getSupplier().setRenderingModels(val);
-    }
-
-    /**
-     * {@inheritDoc}
-     */
-    @Override
-    public void setRenderingScene(boolean val) throws RemoteException {
-        DynaActionSupplier.getSupplier().setRenderingScene(val);
-    }
-
-    /**
-     * {@inheritDoc}
-     */
-    @Override
-    public void setTickDelay(int ms) throws RemoteException {
-        DynaActionSupplier.getSupplier().setTickDelay(ms);
     }
 
     /**

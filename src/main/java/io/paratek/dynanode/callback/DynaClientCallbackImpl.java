@@ -13,26 +13,6 @@ public class DynaClientCallbackImpl extends UnicastRemoteObject implements DynaC
     }
 
     @Override
-    public void onSkillUpdate(int skillIndex, int xp, int level) {
-        Environment.getLogger().debug("Skill Update: " + skillIndex + " -> " + xp + ", " + level);
-    }
-
-    @Override
-    public void onChatBoxUpdate(int type, String sender, String clan, String message) {
-        Environment.getLogger().debug("ChatBox Update: " + type + ", " + sender + ", " + clan + ", " + message);
-    }
-
-    @Override
-    public void onInventoryUpdate(int type, int index, int id, int stack) throws RemoteException {
-        Environment.getLogger().debug("Inventory Change: " + type + ", " + index + ", " + stack + ", " + id);
-    }
-
-    @Override
-    public void onTick() throws RemoteException {
-        System.out.println("Tick");
-    }
-
-    @Override
     public void println(String line) throws RemoteException {
         Environment.getLogger().debug("[GAME MESSAGE]: " + line);
     }
